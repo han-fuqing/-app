@@ -61,10 +61,19 @@ nav a.active::after {
   content: "";
 }
 .header-actions { display: flex; gap: 12px; }
-.icon-button, .primary-button, .category {
+.icon-button, .primary-button, .category, .language-button {
   cursor: pointer;
   border: 0;
 }
+.language-button {
+  padding: 9px 12px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-size: 12px;
+}
+.language-button:hover { border-color: var(--ink); }
 .icon-button {
   padding: 10px 12px;
   color: var(--ink);
@@ -300,6 +309,7 @@ dialog input, dialog select { width: 100%; padding: 13px; color: var(--ink); bor
   .brand-mark { width: 36px; height: 36px; }
   .brand strong { font-size: 17px; }
   .header-actions .icon-button { display: none; }
+  .language-button { padding: 8px 9px; }
   .primary-button { padding: 9px 12px; font-size: 13px; }
   .hero-copy { min-height: 570px; padding: 70px 24px; }
   .hero h1 { font-size: 58px; }

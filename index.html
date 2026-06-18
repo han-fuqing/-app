@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="旧时光中古市集，一个简洁温暖的二手好物展示网页。"
+      content="時をつなぐヴィンテージマーケット。温もりある中古品との出会いを届けます。"
     />
-    <title>旧时光｜中古市集</title>
+    <title>時の市｜ヴィンテージマーケット</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,38 +18,39 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#" aria-label="旧时光首页">
-        <span class="brand-mark">旧</span>
+      <a class="brand" href="#" data-i18n-aria="homeAria" aria-label="時の市 ホーム">
+        <span class="brand-mark">時</span>
         <span>
-          <strong>旧时光</strong>
+          <strong data-i18n="brand">時の市</strong>
           <small>VINTAGE MARKET</small>
         </span>
       </a>
       <nav aria-label="主导航">
-        <a class="active" href="#market">逛市集</a>
-        <a href="#story">关于我们</a>
+        <a class="active" href="#market" data-i18n="navMarket">マーケット</a>
+        <a href="#story" data-i18n="navAbout">私たちについて</a>
       </nav>
       <div class="header-actions">
-        <button class="icon-button" id="favoritesButton" type="button" aria-label="查看收藏">
+        <button class="language-button" id="languageButton" type="button" aria-label="切换中文">中文</button>
+        <button class="icon-button" id="favoritesButton" type="button" data-i18n-aria="favoritesAria" aria-label="お気に入りを見る">
           ♡ <span id="favoriteCount">0</span>
         </button>
-        <button class="primary-button" id="openPublish" type="button">发布闲置</button>
+        <button class="primary-button" id="openPublish" type="button" data-i18n="publish">出品する</button>
       </div>
     </header>
 
     <main>
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">让旧物，遇见新故事</p>
-          <h1>时间留下的<br /><em>好东西</em></h1>
-          <p class="hero-description">
-            精选有温度的中古物件。从衣橱、家居到收藏，每一件旧物都值得再次被喜欢。
+          <p class="eyebrow" data-i18n="heroEyebrow">古いものに、新しい物語を。</p>
+          <h1><span data-i18n="heroTitle">時が育てた</span><br /><em data-i18n="heroAccent">いいもの</em></h1>
+          <p class="hero-description" data-i18n="heroDescription">
+            暮らしに温もりを添えるヴィンテージアイテムを厳選。服、家具、コレクションまで、もう一度愛される価値のある品々です。
           </p>
-          <a class="hero-cta" href="#market">开始淘旧物 <span>→</span></a>
+          <a class="hero-cta" href="#market"><span data-i18n="heroCta">古いものを探す</span> <span>→</span></a>
           <div class="hero-stats" aria-label="平台数据">
-            <div><strong>2,680+</strong><span>精选好物</span></div>
-            <div><strong>860+</strong><span>同好卖家</span></div>
-            <div><strong>98%</strong><span>满意评价</span></div>
+            <div><strong>2,680+</strong><span data-i18n="statItems">厳選アイテム</span></div>
+            <div><strong>860+</strong><span data-i18n="statSellers">出品者</span></div>
+            <div><strong>98%</strong><span data-i18n="statSatisfaction">満足度</span></div>
           </div>
         </div>
         <div class="hero-art" aria-label="中古物件插画">
@@ -68,60 +69,60 @@
       <section class="market-section" id="market">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">本周精选</p>
-            <h2>淘一件心动旧物</h2>
+            <p class="eyebrow" data-i18n="weekly">今週のセレクト</p>
+            <h2 data-i18n="marketTitle">心ときめく一品を</h2>
           </div>
           <label class="search-box">
             <span>⌕</span>
-            <input id="searchInput" type="search" placeholder="搜索品牌、品类或关键词" />
+            <input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="ブランド・カテゴリー・キーワードで検索" />
           </label>
         </div>
 
         <div class="category-row" id="categoryFilters" aria-label="商品分类">
-          <button class="category active" type="button" data-category="全部">全部</button>
-          <button class="category" type="button" data-category="服饰">服饰</button>
-          <button class="category" type="button" data-category="家居">家居</button>
-          <button class="category" type="button" data-category="配饰">配饰</button>
-          <button class="category" type="button" data-category="收藏">收藏</button>
+          <button class="category active" type="button" data-category="全部" data-category-label="all">すべて</button>
+          <button class="category" type="button" data-category="服饰" data-category-label="fashion">ファッション</button>
+          <button class="category" type="button" data-category="家居" data-category-label="home">暮らし</button>
+          <button class="category" type="button" data-category="配饰" data-category-label="accessories">小物</button>
+          <button class="category" type="button" data-category="收藏" data-category-label="collectibles">コレクション</button>
         </div>
 
         <div class="product-grid" id="productGrid"></div>
-        <p class="empty-state" id="emptyState" hidden>暂时没有找到合适的旧物，换个关键词试试吧。</p>
+        <p class="empty-state" id="emptyState" hidden data-i18n="empty">該当するアイテムがありません。別のキーワードをお試しください。</p>
       </section>
 
       <section class="story-section" id="story">
-        <p class="eyebrow">为什么选择中古</p>
-        <h2>买的不只是物件，<br />也是一段被延续的时间。</h2>
+        <p class="eyebrow" data-i18n="whyVintage">ヴィンテージを選ぶ理由</p>
+        <h2><span data-i18n="storyTitle1">手にするのは、ものだけではなく</span><br /><span data-i18n="storyTitle2">受け継がれていく時間です。</span></h2>
         <div class="story-points">
-          <article><span>01</span><h3>认真筛选</h3><p>每件商品都经过成色与细节确认。</p></article>
-          <article><span>02</span><h3>真实描述</h3><p>如实展示使用痕迹，让选择更安心。</p></article>
-          <article><span>03</span><h3>循环生活</h3><p>让好物继续流转，也让生活轻一点。</p></article>
+          <article><span>01</span><h3 data-i18n="point1Title">丁寧なセレクト</h3><p data-i18n="point1Text">状態と細部を一つひとつ確認しています。</p></article>
+          <article><span>02</span><h3 data-i18n="point2Title">正直な説明</h3><p data-i18n="point2Text">使用感も隠さず伝え、安心して選べます。</p></article>
+          <article><span>03</span><h3 data-i18n="point3Title">循環する暮らし</h3><p data-i18n="point3Text">良いものを次へつなぎ、暮らしを少し軽やかに。</p></article>
         </div>
       </section>
     </main>
 
     <footer>
       <div class="brand footer-brand">
-        <span class="brand-mark">旧</span>
-        <span><strong>旧时光</strong><small>VINTAGE MARKET</small></span>
+        <span class="brand-mark">時</span>
+        <span><strong data-i18n="brand">時の市</strong><small>VINTAGE MARKET</small></span>
       </div>
-      <p>© 2026 旧时光中古市集 · 让每件旧物继续讲故事</p>
+      <p data-i18n="footer">© 2026 時の市 · 一つひとつの品に、新しい物語を</p>
     </footer>
 
     <dialog id="publishDialog">
       <form method="dialog" id="publishForm">
         <button class="close-button" value="cancel" aria-label="关闭">×</button>
-        <p class="eyebrow">发布闲置</p>
-        <h2>让好物遇见新主人</h2>
-        <label>物品名称<input name="name" required placeholder="例如：中古皮革手提包" /></label>
-        <label>分类
+        <p class="eyebrow" data-i18n="publish">出品する</p>
+        <h2 data-i18n="publishTitle">大切なものを、次の持ち主へ</h2>
+        <label><span data-i18n="itemName">商品名</span><input name="name" required data-i18n-placeholder="itemNamePlaceholder" placeholder="例：ヴィンテージレザーバッグ" /></label>
+        <label><span data-i18n="category">カテゴリー</span>
           <select name="category">
-            <option>服饰</option><option>家居</option><option>配饰</option><option>收藏</option>
+            <option value="服饰">ファッション</option><option value="家居">暮らし</option><option value="配饰">小物</option><option value="收藏">コレクション</option>
           </select>
         </label>
-        <label>期望价格<input name="price" required type="number" min="1" placeholder="金额（元）" /></label>
-        <button class="primary-button submit-button" value="default" type="submit">提交发布</button>
-        <p class="form-note">当前为网页演示，提交后会在本机显示新商品。</p>
+        <label><span data-i18n="price">希望価格</span><input name="price" required type="number" min="1" data-i18n-placeholder="pricePlaceholder" placeholder="価格（円）" /></label>
+        <button class="primary-button submit-button" value="default" type="submit" data-i18n="submit">出品する</button>
+        <p class="form-note" data-i18n="demoNote">現在はデモ版です。投稿した商品はこの端末に表示されます。</p>
       </form>
     </dialog>
 
