@@ -5,126 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="時をつなぐヴィンテージマーケット。温もりある中古品との出会いを届けます。"
+      content="複数の中古プラットフォームを横断して、お得な商品を探せるヴィンテージマーケット。"
     />
-    <title>時の市｜ヴィンテージマーケット</title>
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>時の市｜中古価格比較</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#" data-i18n-aria="homeAria" aria-label="時の市 ホーム">
+    <header class="app-header">
+      <a class="brand" href="#" aria-label="時の市 ホーム">
         <span class="brand-mark">時</span>
-        <span>
+        <span class="brand-copy">
           <strong data-i18n="brand">時の市</strong>
-          <small>VINTAGE MARKET</small>
+          <small>VINTAGE FINDER</small>
         </span>
       </a>
-      <nav aria-label="主导航">
-        <a class="active" href="#market" data-i18n="navMarket">マーケット</a>
-        <a href="#story" data-i18n="navAbout">私たちについて</a>
-      </nav>
+
       <div class="header-actions">
-        <button class="language-button" id="languageButton" type="button" aria-label="切换中文">中文</button>
-        <button class="icon-button" id="favoritesButton" type="button" data-i18n-aria="favoritesAria" aria-label="お気に入りを見る">
-          ♡ <span id="favoriteCount">0</span>
+        <button class="language-button" id="languageButton" type="button">中文</button>
+        <button class="favorites-button" id="desktopFavoritesButton" type="button">
+          <span>♡</span>
+          <span data-i18n="favorites">お気に入り</span>
+          <b id="desktopFavoriteCount">0</b>
         </button>
-        <button class="primary-button" id="openPublish" type="button" data-i18n="publish">出品する</button>
       </div>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero-section">
         <div class="hero-copy">
-          <p class="eyebrow" data-i18n="heroEyebrow">古いものに、新しい物語を。</p>
-          <h1><span data-i18n="heroTitle">時が育てた</span><br /><em data-i18n="heroAccent">いいもの</em></h1>
-          <p class="hero-description" data-i18n="heroDescription">
-            暮らしに温もりを添えるヴィンテージアイテムを厳選。服、家具、コレクションまで、もう一度愛される価値のある品々です。
+          <span class="eyebrow" data-i18n="eyebrow">中古価格を、ひと目で比較</span>
+          <h1>
+            <span data-i18n="heroTitle1">欲しかったものを、</span>
+            <em data-i18n="heroTitle2">納得できる価格で。</em>
+          </h1>
+          <p data-i18n="heroDescription">
+            Mercari、Yahoo!オークション、Rakuma の出品を想定したデモデータから、お得な中古品をすばやく見つけられます。
           </p>
-          <a class="hero-cta" href="#market"><span data-i18n="heroCta">古いものを探す</span> <span>→</span></a>
-          <div class="hero-stats" aria-label="平台数据">
-            <div><strong>2,680+</strong><span data-i18n="statItems">厳選アイテム</span></div>
-            <div><strong>860+</strong><span data-i18n="statSellers">出品者</span></div>
-            <div><strong>98%</strong><span data-i18n="statSatisfaction">満足度</span></div>
-          </div>
         </div>
-        <div class="hero-art" aria-label="中古物件插画">
-          <div class="sun"></div>
-          <div class="arch">
-            <span class="vase">♟</span>
-            <span class="lamp">◒</span>
-            <span class="camera">▣</span>
-            <span class="book book-one"></span>
-            <span class="book book-two"></span>
+
+        <div class="hero-score-card">
+          <div class="score-orbit">
+            <strong>92</strong>
+            <span data-i18n="dealScore">お得度</span>
           </div>
-          <span class="art-note">CURATED<br />WITH CARE</span>
+          <div>
+            <span class="recommend-label" data-i18n="recommend">🔥 おすすめ</span>
+            <p data-i18n="scoreDescription">市場価格との差から、掘り出し物を自動判定。</p>
+          </div>
         </div>
       </section>
 
       <section class="market-section" id="market">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow" data-i18n="weekly">今週のセレクト</p>
-            <h2 data-i18n="marketTitle">心ときめく一品を</h2>
-          </div>
+        <div class="sticky-controls">
           <label class="search-box">
-            <span>⌕</span>
-            <input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="ブランド・カテゴリー・キーワードで検索" />
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m21 21-4.3-4.3m2.3-5.2A7.5 7.5 0 1 1 4 11.5a7.5 7.5 0 0 1 15 0Z" />
+            </svg>
+            <input
+              id="searchInput"
+              type="search"
+              autocomplete="off"
+              data-i18n-placeholder="searchPlaceholder"
+              placeholder="商品名を検索"
+            />
+            <button id="clearSearch" class="clear-search" type="button" aria-label="検索をクリア">×</button>
           </label>
+
+          <div class="filter-row">
+            <div class="view-tabs" role="tablist">
+              <button class="view-tab active" type="button" data-view="all">
+                <span data-i18n="allItems">すべて</span>
+                <b id="allCount">0</b>
+              </button>
+              <button class="view-tab" type="button" data-view="favorites">
+                <span data-i18n="favorites">お気に入り</span>
+                <b id="favoriteCount">0</b>
+              </button>
+            </div>
+
+            <label class="sort-control">
+              <span data-i18n="sortLabel">並び替え</span>
+              <select id="sortSelect">
+                <option value="recommended" data-i18n="sortRecommended">おすすめ順</option>
+                <option value="low" data-i18n="sortLow">価格が安い順</option>
+                <option value="high" data-i18n="sortHigh">価格が高い順</option>
+              </select>
+            </label>
+          </div>
         </div>
 
-        <div class="category-row" id="categoryFilters" aria-label="商品分类">
-          <button class="category active" type="button" data-category="全部" data-category-label="all">すべて</button>
-          <button class="category" type="button" data-category="服饰" data-category-label="fashion">ファッション</button>
-          <button class="category" type="button" data-category="家居" data-category-label="home">暮らし</button>
-          <button class="category" type="button" data-category="配饰" data-category-label="accessories">小物</button>
-          <button class="category" type="button" data-category="收藏" data-category-label="collectibles">コレクション</button>
+        <div class="results-heading">
+          <div>
+            <p class="results-kicker" id="resultsKicker" data-i18n="allItems">すべて</p>
+            <h2><span id="resultCount">0</span> <span data-i18n="itemsFound">件の商品</span></h2>
+          </div>
+          <p data-i18n="mockNotice">※ 現在はデモ用の価格データです</p>
         </div>
 
         <div class="product-grid" id="productGrid"></div>
-        <p class="empty-state" id="emptyState" hidden data-i18n="empty">該当するアイテムがありません。別のキーワードをお試しください。</p>
-      </section>
 
-      <section class="story-section" id="story">
-        <p class="eyebrow" data-i18n="whyVintage">ヴィンテージを選ぶ理由</p>
-        <h2><span data-i18n="storyTitle1">手にするのは、ものだけではなく</span><br /><span data-i18n="storyTitle2">受け継がれていく時間です。</span></h2>
-        <div class="story-points">
-          <article><span>01</span><h3 data-i18n="point1Title">丁寧なセレクト</h3><p data-i18n="point1Text">状態と細部を一つひとつ確認しています。</p></article>
-          <article><span>02</span><h3 data-i18n="point2Title">正直な説明</h3><p data-i18n="point2Text">使用感も隠さず伝え、安心して選べます。</p></article>
-          <article><span>03</span><h3 data-i18n="point3Title">循環する暮らし</h3><p data-i18n="point3Text">良いものを次へつなぎ、暮らしを少し軽やかに。</p></article>
+        <div class="empty-state" id="emptyState" hidden>
+          <div>⌕</div>
+          <h3 data-i18n="emptyTitle">商品が見つかりません</h3>
+          <p data-i18n="emptyText">検索条件を変更して、もう一度お試しください。</p>
+          <button id="resetFilters" type="button" data-i18n="reset">条件をリセット</button>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="brand footer-brand">
-        <span class="brand-mark">時</span>
-        <span><strong data-i18n="brand">時の市</strong><small>VINTAGE MARKET</small></span>
-      </div>
-      <p data-i18n="footer">© 2026 時の市 · 一つひとつの品に、新しい物語を</p>
-    </footer>
-
-    <dialog id="publishDialog">
-      <form method="dialog" id="publishForm">
-        <button class="close-button" value="cancel" aria-label="关闭">×</button>
-        <p class="eyebrow" data-i18n="publish">出品する</p>
-        <h2 data-i18n="publishTitle">大切なものを、次の持ち主へ</h2>
-        <label><span data-i18n="itemName">商品名</span><input name="name" required data-i18n-placeholder="itemNamePlaceholder" placeholder="例：ヴィンテージレザーバッグ" /></label>
-        <label><span data-i18n="category">カテゴリー</span>
-          <select name="category">
-            <option value="服饰">ファッション</option><option value="家居">暮らし</option><option value="配饰">小物</option><option value="收藏">コレクション</option>
-          </select>
-        </label>
-        <label><span data-i18n="price">希望価格</span><input name="price" required type="number" min="1" data-i18n-placeholder="pricePlaceholder" placeholder="価格（円）" /></label>
-        <button class="primary-button submit-button" value="default" type="submit" data-i18n="submit">出品する</button>
-        <p class="form-note" data-i18n="demoNote">現在はデモ版です。投稿した商品はこの端末に表示されます。</p>
-      </form>
-    </dialog>
+    <nav class="mobile-nav" aria-label="モバイルナビゲーション">
+      <button class="mobile-nav-item active" type="button" data-mobile-view="all">
+        <span>⌂</span>
+        <small data-i18n="market">マーケット</small>
+      </button>
+      <button class="mobile-nav-item" type="button" data-mobile-view="favorites">
+        <span>♡</span>
+        <small data-i18n="favorites">お気に入り</small>
+        <b id="mobileFavoriteCount">0</b>
+      </button>
+    </nav>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./app.js"></script>
